@@ -1,0 +1,382 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3id.org/teamingai/resources/ont/FMEA#"
+     xml:base="http://www.w3id.org/teamingai/resources/ont/FMEA"
+     xmlns:ap="http://www.w3id.org/resources/ont/adjustmentProtocol#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:fmea="http://www.w3id.org/teamingai/resources/ont/FMEA#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/">
+    <owl:Ontology rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA">
+        <owl:versionIRI rdf:resource="http://http://www.w3id.org/teamingai/resources/ont/FMEA/1.0.0"/>
+        <dc:creator>Kabul Kurniawan</dc:creator>
+        <dc:description xml:lang="en">An ontology to represent Adjustment Protocol for Teaming AI</dc:description>
+        <dc:description xml:lang="en">An ontology to represent FMEA</dc:description>
+        <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+        <dc:title></dc:title>
+        <vann:preferredNamespacePrefix>ap</vann:preferredNamespacePrefix>
+        <vann:preferredNamespacePrefix>fmea</vann:preferredNamespacePrefix>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/resources/ont/adjustmentProtocol#adjustmentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/resources/ont/adjustmentProtocol#adjustmentOf">
+        <rdfs:domain rdf:resource="http://www.w3id.org/resources/ont/adjustmentProtocol#Adjustment"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#FailureMode"/>
+        <rdfs:label>adjustmentOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/resources/ont/adjustmentProtocol#hasCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/resources/ont/adjustmentProtocol#hasCondition">
+        <rdfs:domain rdf:resource="http://www.w3id.org/resources/ont/adjustmentProtocol#Adjustment"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Condition"/>
+        <rdfs:label>hasCondition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/resources/ont/adjustmentProtocol#hasModificationType -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/resources/ont/adjustmentProtocol#hasModificationType">
+        <rdfs:domain rdf:resource="http://www.w3id.org/resources/ont/adjustmentProtocol#Adjustment"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/resources/ont/adjustmentProtocol#ModificationType"/>
+        <rdfs:label>hasModificationType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/resources/ont/adjustmentProtocol#hasParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/resources/ont/adjustmentProtocol#hasParameter">
+        <rdfs:domain rdf:resource="http://www.w3id.org/resources/ont/adjustmentProtocol#Adjustment"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/resources/ont/adjustmentProtocol#Parameter"/>
+        <rdfs:label>hasParameter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#hasAssociateParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#hasAssociateParameter">
+        <rdfs:domain rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Cause"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/resources/ont/adjustmentProtocol#Parameter"/>
+        <rdfs:label>hasAssociateParameter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#hasCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#hasCondition">
+        <rdfs:domain rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#FailureMode"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Condition"/>
+        <rdfs:label>hasFailureCondition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#hasControlMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#hasControlMethod">
+        <rdfs:domain rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Cause"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Control"/>
+        <rdfs:label>hasControlMethod</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#hasPotentialCause -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#hasPotentialCause">
+        <rdfs:domain rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#FailureMode"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Cause"/>
+        <rdfs:label>hasPotentialCause</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#hasPotentialEffect -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#hasPotentialEffect">
+        <rdfs:domain rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#FailureMode"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Effect"/>
+        <rdfs:label>hasPotentialEffect</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#hasPotentialFailureMode -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#hasPotentialFailureMode">
+        <rdfs:domain rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Process"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#FailureMode"/>
+        <rdfs:label>hasPotentialFailureMode</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#hasRecommendedAction -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#hasRecommendedAction">
+        <rdfs:domain rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Cause"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Action"/>
+        <rdfs:label>hasRecommendedAction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/resources/ont/adjustmentProtocol#actionPriority -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3id.org/resources/ont/adjustmentProtocol#actionPriority">
+        <rdfs:domain rdf:resource="http://www.w3id.org/resources/ont/adjustmentProtocol#Adjustment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label>actionPriority</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3id.org/resources/ont/adjustmentProtocol#adjustmentRate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3id.org/resources/ont/adjustmentProtocol#adjustmentRate">
+        <rdfs:domain rdf:resource="http://www.w3id.org/resources/ont/adjustmentProtocol#Adjustment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label>adjustmentRate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3id.org/resources/ont/adjustmentProtocol#unit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3id.org/resources/ont/adjustmentProtocol#unit">
+        <rdfs:domain rdf:resource="http://www.w3id.org/resources/ont/adjustmentProtocol#Parameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Unit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#detection -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#detection">
+        <rdfs:domain rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Cause"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>detection</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#ndetection -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#ndetection">
+        <rdfs:domain rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Action"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>ndetection</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#noccurence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#noccurence">
+        <rdfs:domain rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Action"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>noccurence</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#nseverity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#nseverity">
+        <rdfs:domain rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Action"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>nseverity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#occurence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#occurence">
+        <rdfs:domain rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Cause"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>occurence</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#severity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#severity">
+        <rdfs:domain rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Cause"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>severity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/resources/ont/adjustmentProtocol#Adjustment -->
+
+    <owl:Class rdf:about="http://www.w3id.org/resources/ont/adjustmentProtocol#Adjustment">
+        <rdfs:label>Adjustment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/resources/ont/adjustmentProtocol#ModificationType -->
+
+    <owl:Class rdf:about="http://www.w3id.org/resources/ont/adjustmentProtocol#ModificationType"/>
+    
+
+
+    <!-- http://www.w3id.org/resources/ont/adjustmentProtocol#Parameter -->
+
+    <owl:Class rdf:about="http://www.w3id.org/resources/ont/adjustmentProtocol#Parameter">
+        <rdfs:label>Parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#Action -->
+
+    <owl:Class rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#Action">
+        <rdfs:label>Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#Cause -->
+
+    <owl:Class rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#Cause">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label>Cause</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#Condition -->
+
+    <owl:Class rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#Condition">
+        <rdfs:label>FailureCondition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#Control -->
+
+    <owl:Class rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#Control">
+        <rdfs:label>Control</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#Effect -->
+
+    <owl:Class rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#Effect">
+        <rdfs:label>Effect</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#FailureMode -->
+
+    <owl:Class rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#FailureMode">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label>FailureMode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#Process -->
+
+    <owl:Class rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#Process">
+        <rdfs:label>Process</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://www.teamingai-project.eu/manufacturing#"
+     xml:base="https://www.teamingai-project.eu/manufacturing"
+     xmlns:bbo="https://www.irit.fr/recherches/MELODI/ontologies/BBO#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:manufacturing="https://www.teamingai-project.eu/manufacturing#">
+    <owl:Ontology rdf:about="https://www.teamingai-project.eu/manufacturing">
+        <owl:imports rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.teamingai-project.eu/manufacturing#hasProductCycle -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/manufacturing#hasProductCycle">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/manufacturing#Product"/>
+        <rdfs:range rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#WorkProduct"/>
+        <rdfs:comment>Assigns a :ProductCycle (i.e., an abstract process) that describes the activities that need to be performed to produce the given product.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.irit.fr/recherches/MELODI/ontologies/BBO#WorkProduct -->
+
+    <rdf:Description rdf:about="https://www.irit.fr/recherches/MELODI/ontologies/BBO#WorkProduct">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/manufacturing#Product"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.teamingai-project.eu/manufacturing#ConsumableProduct -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/manufacturing#ConsumableProduct">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/manufacturing#Product"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/manufacturing#FinalProduct -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/manufacturing#FinalProduct">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#WorkProduct"/>
+        <rdfs:comment>A final product that will not be consumed by other processes/activities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/manufacturing#HumanTool -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/manufacturing#HumanTool">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/manufacturing#InterimProduct -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/manufacturing#InterimProduct">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#WorkProduct"/>
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/manufacturing#ConsumableProduct"/>
+        <rdfs:comment>A produced product that MAY be consumed in subsequent processes or activities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/manufacturing#MachineComponent -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/manufacturing#MachineComponent">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Component"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/manufacturing#MachineResource -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/manufacturing#MachineResource">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Agent"/>
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Resource"/>
+        <rdfs:comment>A self-contained machine that can perform a task without the need for defining additional components of the machine.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/manufacturing#MachineTool -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/manufacturing#MachineTool">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Tool"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/manufacturing#Product -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/manufacturing#Product">
+        <rdfs:comment>A :Product is the a consumable and/or produced product.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/manufacturing#ProductCycle -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/manufacturing#ProductCycle">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/manufacturing#ProductionCycle"/>
+        <rdfs:comment>A process that describes the activities that need to be performed to produce a specific :Product. IMPORTANT: The abstract nodes within :ProductionCycle patterns and :ProductCycle patterns do not need to be distinct!</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/manufacturing#ProductionCycle -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/manufacturing#ProductionCycle">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Process"/>
+        <rdfs:comment>A typical production process that occurs in manufacturing lines. An execution of such a pattern leads to a production cycle.</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

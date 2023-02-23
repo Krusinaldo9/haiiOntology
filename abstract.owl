@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://www.teamingai-project.eu/abstract#"
+     xml:base="https://www.teamingai-project.eu/abstract"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:abstract="https://www.teamingai-project.eu/abstract#">
+    <owl:Ontology rdf:about="https://www.teamingai-project.eu/abstract"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#contains -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/abstract#contains">
+        <owl:inverseOf rdf:resource="https://www.teamingai-project.eu/abstract#partOf"/>
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/abstract#Pattern"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/abstract#AbstractNode"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/abstract#InstanceNode"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/abstract#Pattern"/>
+        <rdfs:comment>An abstract pattern may contain AbstractNodes and thus also AbstractPatterns. For example, a process pattern may contain task patterns.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#hasDataType -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/abstract#hasDataType">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/abstract#DataPropertyNode"/>
+        <rdfs:comment>The xsd data type of a DataValueNode.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#hasGateway -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/abstract#hasGateway">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/abstract#AbstractNode"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/abstract#GatewayNode"/>
+        <rdfs:comment>Links an abstract node to a GatewayNode</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#hasInstance -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/abstract#hasInstance">
+        <owl:inverseOf rdf:resource="https://www.teamingai-project.eu/abstract#instanceOf"/>
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/abstract#AbstractNode"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/abstract#AbstractNode"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/abstract#InstanceNode"/>
+        <rdfs:comment>Describes the instances of an AbstractNode. IMPORTANT: The terminology allows for the definition of AbstractNode x as an instance of another AbstractNode y. This is possible if x as a component of pattern Px is meant to represent a sub-pattern which is defined in y. For example, some abstract process pattern Px contains some task x as an abstract node which is meant to be an instance of the abstract task pattern y.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#instanceOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/abstract#instanceOf">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/abstract#AbstractNode"/>
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/abstract#InstanceNode"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/abstract#AbstractNode"/>
+        <rdfs:comment>see :hasInstance</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#partOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/abstract#partOf">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/abstract#AbstractNode"/>
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/abstract#InstanceNode"/>
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/abstract#Pattern"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/abstract#Pattern"/>
+        <rdfs:comment>see :contains</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#end -->
+
+    <owl:DatatypeProperty rdf:about="https://www.teamingai-project.eu/abstract#end">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.teamingai-project.eu/abstract#InstanceNode"/>
+                    <rdf:Description rdf:about="https://www.teamingai-project.eu/abstract#Pattern"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment>The end time of the initiation of an abstract pattern</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#hasDataValue -->
+
+    <owl:DatatypeProperty rdf:about="https://www.teamingai-project.eu/abstract#hasDataValue">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/abstract#DataPropertyNode"/>
+        <rdfs:comment>the actual data value of a DataValueNode</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#start -->
+
+    <owl:DatatypeProperty rdf:about="https://www.teamingai-project.eu/abstract#start">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.teamingai-project.eu/abstract#InstanceNode"/>
+                    <rdf:Description rdf:about="https://www.teamingai-project.eu/abstract#Pattern"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment>The start time of the initiation of an abstract pattern</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#ANDGatewayNode -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/abstract#ANDGatewayNode">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/abstract#GatewayNode"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#AbstractNode -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/abstract#AbstractNode">
+        <rdfs:comment>Abstract nodes are the main components of abstract patterns. They describe nodes and their attributes/relations that should occur if a real-world node is meant to represent this abstract node.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#DataPropertyNode -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/abstract#DataPropertyNode">
+        <rdfs:comment>A DataPropertyNode represents a pattern of a data property.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#GatewayNode -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/abstract#GatewayNode">
+        <rdfs:comment>In abstract patterns a gateway represents that some/all/no subgraph patterns may be linked to an abstract node.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#InstanceNode -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/abstract#InstanceNode">
+        <rdfs:comment>InstanceNodes represent the nodes usually referred to as instances. Here, however, an assignment to an AbstractNode is additionally needed by means of the relation instanceOf.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#NOTGatewayNode -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/abstract#NOTGatewayNode">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/abstract#GatewayNode"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#ORGatewayNode -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/abstract#ORGatewayNode">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/abstract#GatewayNode"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#Pattern -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/abstract#Pattern">
+        <rdfs:comment>A pattern describes an abstract subgraph structure. It yan be utilized to conceptualize frequently occuring patterns, e.g., business processes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/abstract#XORGatewayNode -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/abstract#XORGatewayNode">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/abstract#GatewayNode"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

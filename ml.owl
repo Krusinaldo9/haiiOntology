@@ -1,0 +1,552 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://www.teamingai-project.eu/ml#"
+     xml:base="https://www.teamingai-project.eu/ml"
+     xmlns:ml="https://www.teamingai-project.eu/ml#"
+     xmlns:bbo="https://www.irit.fr/recherches/MELODI/ontologies/BBO#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+    <owl:Ontology rdf:about="https://www.teamingai-project.eu/ml">
+        <owl:imports rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#basedOnModel -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#basedOnModel">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#Prediction"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#TrainedModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#hasArchitecture -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#hasArchitecture">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#TrainedModel"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#Architecture"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#hasDataPoint -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#hasDataPoint">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#DataSet"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#DataPoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#hasInput -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#hasInput">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#DataPoint"/>
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#Prediction"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#InputData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#hasInputType -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#hasInputType">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#Architecture"/>
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#DataPoint"/>
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#DataSet"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#InputType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#hasOutput">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#DataPoint"/>
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#Prediction"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#OutputData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#hasOutputModel -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#hasOutputModel">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#Training"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#TrainedModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#hasOutputType -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#hasOutputType">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#Architecture"/>
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#DataPoint"/>
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#DataSet"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#OutputType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#hasPerformance -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#hasPerformance">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#TrainedModel"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#Evaluation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#hasTestData -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#hasTestData">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#DataSet"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#TestData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#hasTrainingConfiguration -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#hasTrainingConfiguration">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#Training"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#TrainingConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#hasTrainingData -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#hasTrainingData">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#DataSet"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#TrainingData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#initialModel -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#initialModel">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#TrainingConfiguration"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#TrainedModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#performsMLType -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#performsMLType">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#Architecture"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#MLType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#previousModel -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#previousModel">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#TrainingConfiguration"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#TrainedModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#trainedArchitecture -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#trainedArchitecture">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#Training"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#Architecture"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#trainingCause -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#trainingCause">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#TrainingConfiguration"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#TrainingCause"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#usesDataset -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#usesDataset">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#Evaluation"/>
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#Training"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#DataSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#utilizedFramework -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/ml#utilizedFramework">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/ml#Architecture"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/ml#Framework"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#Algorithm -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#Algorithm"/>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#Architecture -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#Architecture">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#ArtificialNeuralNetwork -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#ArtificialNeuralNetwork">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#Classification -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#Classification">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#MLType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#ConvolutionalNeuralNetwork -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#ConvolutionalNeuralNetwork">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#ArtificialNeuralNetwork"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#Data -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#Data">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#DataResource"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#DataPoint -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#DataPoint">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#Data"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#DataSet -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#DataSet">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#Data"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#DataType -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#DataType"/>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#DecisionTree -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#DecisionTree">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#DistributionCause -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#DistributionCause">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#TrainingCause"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#Evaluation -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#Evaluation"/>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#Framework -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#Framework"/>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#GraphNeuralNetwork -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#GraphNeuralNetwork">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#ArtificialNeuralNetwork"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#Image -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#Image">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#InputType"/>
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#OutputType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#InputData -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#InputData">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#Data"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#InputType -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#InputType">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#LabeledDataPoint -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#LabeledDataPoint">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#DataPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#MLType -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#MLType"/>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#MultiLayerPerceptron -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#MultiLayerPerceptron">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#ArtificialNeuralNetwork"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#OutputData -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#OutputData">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#Data"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#OutputType -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#OutputType">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#DataType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#PerformanceCause -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#PerformanceCause">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#TrainingCause"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#Prediction -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#Prediction">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Resource"/>
+        <rdfs:comment>A prediction is the output of a ML prediction. TODO: Can we assume that a prediction is always a :LabeledDataPoint?</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#PyTorch -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#PyTorch">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#Framework"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#RandomForest -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#RandomForest">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#RecurrentNeuralNetwork -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#RecurrentNeuralNetwork">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#ArtificialNeuralNetwork"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#Regression -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#Regression">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#MLType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#Resource -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#Resource">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Resource"/>
+        <rdfs:comment>A ML-based resource that can be used in other tasks/processes, i.e., ML archtitectures and trained ML models.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#SingleFeature -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#SingleFeature">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#InputType"/>
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#OutputType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#SupportVectorMachine -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#SupportVectorMachine">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#TensorFlow -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#TensorFlow">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#Framework"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#TestData -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#TestData">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#DataSet"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#TimeCause -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#TimeCause">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#TrainingCause"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#TimeSeries -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#TimeSeries">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#InputType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#TrainedModel -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#TrainedModel">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#Training -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#Training"/>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#TrainingCause -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#TrainingCause"/>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#TrainingConfiguration -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#TrainingConfiguration"/>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#TrainingData -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#TrainingData">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#DataSet"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#UnlabeledDataPoint -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#UnlabeledDataPoint">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#DataPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#VolumeCause -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#VolumeCause">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#TrainingCause"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/ml#scikit-learn -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/ml#scikit-learn">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/ml#Framework"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -19,12 +19,12 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:manufacturing="https://www.teamingai-project.eu/manufacturing#">
     <owl:Ontology rdf:about="https://www.teamingai-project.eu/haii">
-        <owl:imports rdf:resource="http://http://www.w3id.org/teamingai/resources/ont/FMEA/1.0.0"/>
-        <owl:imports rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO"/>
-        <owl:imports rdf:resource="https://www.teamingai-project.eu/abstract"/>
-        <owl:imports rdf:resource="https://www.teamingai-project.eu/manufacturing"/>
-        <owl:imports rdf:resource="https://www.teamingai-project.eu/ml"/>
-        <owl:imports rdf:resource="https://www.teamingai-project.eu/service"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/Krusinaldo9/haiiOntology/main/fmea-ipap.owl"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/Krusinaldo9/haiiOntology/main/bbo.owl"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/Krusinaldo9/haiiOntology/main/abstract.owl"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/Krusinaldo9/haiiOntology/main/manufacturing.owl"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/Krusinaldo9/haiiOntology/main/ml.owl"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/Krusinaldo9/haiiOntology/main/service.owl"/>
     </owl:Ontology>
     
 

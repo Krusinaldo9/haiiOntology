@@ -10,7 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="https://www.teamingai-project.eu/ml">
-        <owl:imports rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/Krusinaldo9/haiiOntology/main/bbo.owl"/>
     </owl:Ontology>
     
 

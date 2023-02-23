@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://www.teamingai-project.eu/bpmn#"
+     xml:base="https://www.teamingai-project.eu/bpmn"
+     xmlns:ap="http://www.w3id.org/resources/ont/adjustmentProtocol#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ml="https://www.teamingai-project.eu/ml#"
+     xmlns:bbo="https://www.irit.fr/recherches/MELODI/ontologies/BBO#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:fmea="http://www.w3id.org/teamingai/resources/ont/FMEA#"
+     xmlns:haii="https://www.teamingai-project.eu/haii#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:system="https://www.teamingai-project.eu/system#"
+     xmlns:service="https://www.teamingai-project.eu/service#"
+     xmlns:abstract="https://www.teamingai-project.eu/abstract#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:manufacturing="https://www.teamingai-project.eu/manufacturing#">
+    <owl:Ontology rdf:about="https://www.teamingai-project.eu/haii">
+        <owl:imports rdf:resource="http://http://www.w3id.org/teamingai/resources/ont/FMEA/1.0.0"/>
+        <owl:imports rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO"/>
+        <owl:imports rdf:resource="https://www.teamingai-project.eu/abstract"/>
+        <owl:imports rdf:resource="https://www.teamingai-project.eu/manufacturing"/>
+        <owl:imports rdf:resource="https://www.teamingai-project.eu/ml"/>
+        <owl:imports rdf:resource="https://www.teamingai-project.eu/service"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#hasPotentialFailureMode -->
+
+    <rdf:Description rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#hasPotentialFailureMode">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/haii#FailureActivity"/>
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/haii#FailureProcess"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#has_subSystem -->
+
+    <owl:ObjectProperty rdf:about="https://www.teamingai-project.eu/haii#has_subSystem">
+        <rdfs:domain rdf:resource="https://www.teamingai-project.eu/haii#SystemResource"/>
+        <rdfs:range rdf:resource="https://www.teamingai-project.eu/haii#SystemResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#isAvailable -->
+
+    <owl:DatatypeProperty rdf:about="https://www.teamingai-project.eu/haii#isAvailable">
+        <rdfs:domain rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Resource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3id.org/resources/ont/adjustmentProtocol#Adjustment -->
+
+    <rdf:Description rdf:about="http://www.w3id.org/resources/ont/adjustmentProtocol#Adjustment">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#ManualTask"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3id.org/teamingai/resources/ont/FMEA#Process -->
+
+    <rdf:Description rdf:about="http://www.w3id.org/teamingai/resources/ont/FMEA#Process">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Process"/>
+        <rdfs:comment>An fmea:Process is a process (preferably from the field of manufacturing) that can be linked to a fmea:FailureMode and thus be labeled as a :FailureProcess.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.irit.fr/recherches/MELODI/ontologies/BBO#FlowElementsContainer -->
+
+    <rdf:Description rdf:about="https://www.irit.fr/recherches/MELODI/ontologies/BBO#FlowElementsContainer">
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/abstract#Pattern"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#AdjustmentProtocol -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/haii#AdjustmentProtocol">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Process"/>
+        <rdfs:comment>An Adjustment Protocol is a process that only involves the execution of ipap:Adjustment instances.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#CurrentFailureMode -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/haii#CurrentFailureMode">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#FailureMode"/>
+        <rdfs:comment>A FailureMode that occured at the timestamp of detection/prediction</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#DetectedFailureMode -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/haii#DetectedFailureMode">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#FailureMode"/>
+        <rdfs:comment>A detected (i.e., factual) FailureMode</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#FailureActivity -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/haii#FailureActivity">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#FailureProcess -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/haii#FailureProcess">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#hasPotentialFailureMode"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#FailureMode"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#Process"/>
+        <rdfs:comment>An fmea:Process that is linked to at least one fmea:FailureMode via fmea:hasPotentialFailureMode.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#FutureFailureMode -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/haii#FutureFailureMode">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#FailureMode"/>
+        <rdfs:comment>A FailureMode that is predicted/detected to happen in the future</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#KnowledgeGraph -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/haii#KnowledgeGraph">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#DataResource"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#MLPredictionTask -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/haii#MLPredictionTask">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#ServiceTask"/>
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/haii#PredictionTask"/>
+        <rdfs:comment>Task with a ml:Prediction as output.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#PredictedFailureMode -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/haii#PredictedFailureMode">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/teamingai/resources/ont/FMEA#FailureMode"/>
+        <rdfs:comment>A predicted FailureMode with some uncertainty</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#PredictionTask -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/haii#PredictionTask">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#SystemResource -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/haii#SystemResource">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Agent"/>
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Resource"/>
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#ResourceCollection"/>
+        <rdfs:subClassOf rdf:resource="https://www.teamingai-project.eu/abstract#Pattern"/>
+        <rdfs:comment>A pattern of agent resources that are are responsible for the activities within a process -&gt; Resource collection. As this system is responsible for the top-level process it is to be regarded as a resource itself as well.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#SystemSequenceDiagram -->
+
+    <owl:Class rdf:about="https://www.teamingai-project.eu/haii#SystemSequenceDiagram">
+        <rdfs:subClassOf rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#Process"/>
+        <rdfs:comment>A sequence diagram or system sequence diagram (SSD) shows process interactions arranged in time sequence in the field of software engineering. It depicts the processes involved and the sequence of messages exchanged between the processes needed to carry out the functionality.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#AvailableState -->
+
+    <owl:NamedIndividual rdf:about="https://www.teamingai-project.eu/haii#AvailableState">
+        <rdf:type rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#ResourceState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#ConsumedState -->
+
+    <owl:NamedIndividual rdf:about="https://www.teamingai-project.eu/haii#ConsumedState">
+        <rdf:type rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#ResourceState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#InUseState -->
+
+    <owl:NamedIndividual rdf:about="https://www.teamingai-project.eu/haii#InUseState">
+        <rdf:type rdf:resource="https://www.irit.fr/recherches/MELODI/ontologies/BBO#ResourceState"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.teamingai-project.eu/haii#InitialTraining -->
+
+    <owl:NamedIndividual rdf:about="https://www.teamingai-project.eu/haii#InitialTraining">
+        <rdf:type rdf:resource="https://www.teamingai-project.eu/ml#TrainingCause"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

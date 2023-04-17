@@ -1,0 +1,123 @@
+@prefix : <https://www.teamingai-project.eu/def#> .
+@prefix bbo: <https://www.irit.fr/recherches/MELODI/ontologies/BBO#> .
+@prefix def: <https://www.teamingai-project.eu/def#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://www.teamingai-project.eu/def> .
+
+#<https://www.teamingai-project.eu/def> rdf:type owl:Ontology ;
+#                                        owl:imports <https://www.irit.fr/recherches/MELODI/ontologies/BBO> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://www.irit.fr/recherches/MELODI/ontologies/BBO#has_container
+bbo:has_container rdfs:subPropertyOf def:is_contained_in .
+
+
+###  https://www.irit.fr/recherches/MELODI/ontologies/BBO#has_flowElements
+bbo:has_flowElements rdfs:subPropertyOf def:contains .
+
+
+###  https://www.teamingai-project.eu/def#contains
+def:contains rdf:type owl:ObjectProperty ;
+             owl:inverseOf def:is_contained_in ;
+             rdfs:domain def:Container ;
+             rdfs:range def:Component .
+
+
+###  https://www.teamingai-project.eu/def#hasDefiniteInstance
+def:hasDefiniteInstance rdf:type owl:ObjectProperty ;
+                        rdfs:domain def:IndefiniteThing ;
+                        rdfs:range def:DefiniteThing .
+
+
+###  https://www.teamingai-project.eu/def#isDefiniteInstanceOf
+def:isDefiniteInstanceOf rdf:type owl:ObjectProperty ;
+                         rdfs:domain def:DefiniteThing ;
+                         rdfs:range def:IndefiniteThing .
+
+
+###  https://www.teamingai-project.eu/def#is_contained_in
+def:is_contained_in rdf:type owl:ObjectProperty ;
+                    rdfs:domain def:Component ;
+                    rdfs:range def:Container .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://www.irit.fr/recherches/MELODI/ontologies/BBO#FlowElement
+bbo:FlowElement rdfs:subClassOf def:Component .
+
+
+###  https://www.irit.fr/recherches/MELODI/ontologies/BBO#FlowElementsContainer
+bbo:FlowElementsContainer rdfs:subClassOf def:Container .
+
+
+###  https://www.teamingai-project.eu/def#Component
+def:Component rdf:type owl:Class .
+
+
+###  https://www.teamingai-project.eu/def#Container
+def:Container rdf:type owl:Class .
+
+
+###  https://www.teamingai-project.eu/def#DefiniteComponent
+def:DefiniteComponent rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( def:Component
+                                                                 def:DefiniteThing
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf def:Component ,
+                                      def:DefiniteThing .
+
+
+###  https://www.teamingai-project.eu/def#DefiniteContainer
+def:DefiniteContainer rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( def:Container
+                                                                 def:DefiniteThing
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf def:Container ,
+                                      def:DefiniteThing .
+
+
+###  https://www.teamingai-project.eu/def#DefiniteThing
+def:DefiniteThing rdf:type owl:Class .
+
+
+###  https://www.teamingai-project.eu/def#IndefiniteComponent
+def:IndefiniteComponent rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( def:Component
+                                                                   def:IndefiniteThing
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf def:Component ,
+                                        def:IndefiniteThing .
+
+
+###  https://www.teamingai-project.eu/def#IndefiniteContainer
+def:IndefiniteContainer rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( def:Container
+                                                                   def:IndefiniteThing
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf def:Container ,
+                                        def:IndefiniteThing .
+
+
+###  https://www.teamingai-project.eu/def#IndefiniteThing
+def:IndefiniteThing rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
